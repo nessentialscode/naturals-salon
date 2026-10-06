@@ -197,15 +197,23 @@ img {
 }
 
 .brand-logo {
-  font-size: 1.45rem;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  color: #ffffff;
-  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
 }
 
-.site-header.scrolled .brand-logo {
-  color: var(--text-dark);
+.brand-logo:hover {
+  opacity: 0.88;
+}
+
+.brand-logo-img {
+  height: 50px;
+  width: auto;
+  max-width: 220px;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.25s ease;
 }
 
 .nav-links {
@@ -265,18 +273,16 @@ img {
 }
 
 /* ==========================================================================
-   HERO SECTION (Image 1 & 10)
+   HERO SECTION (Matches reference screenshot layout)
    ========================================================================== */
 .hero-section {
   position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   background-color: #dfd4c7;
   overflow: hidden;
-  padding-top: 130px;
-  padding-bottom: 30px;
+  padding: 0;
 }
 
 .hero-bg-container {
@@ -307,12 +313,146 @@ img {
   z-index: 2;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.25) 0%,
-    rgba(0, 0, 0, 0.05) 30%,
-    rgba(0, 0, 0, 0.15) 75%,
-    rgba(0, 0, 0, 0.45) 100%
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0.02) 25%,
+    rgba(0, 0, 0, 0.12) 75%,
+    rgba(0, 0, 0, 0.35) 100%
   );
   pointer-events: none;
+}
+
+/* DESKTOP HERO VIEW */
+.hero-desktop-view {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 130px;
+  padding-bottom: 0;
+  box-sizing: border-box;
+}
+
+.hero-desktop-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Short description left top side */
+.hero-desktop-copy {
+  max-width: 440px;
+  margin-top: 28px;
+}
+
+.hero-desktop-title {
+  color: #ffffff;
+  font-size: clamp(1.5rem, 2.3vw, 2.15rem);
+  font-weight: 500;
+  line-height: 1.24;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.25);
+}
+
+.hero-desktop-explore-btn {
+  display: inline-flex;
+  padding: 11px 22px;
+  font-size: 0.9rem;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Bottom area: two small descriptions above Naturals Salon text */
+.hero-desktop-bottom-wrapper {
+  width: 100%;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-features-bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: 100%;
+  gap: 24px;
+  margin-bottom: 14px;
+  padding-right: 12px;
+  box-sizing: border-box;
+}
+
+.hero-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 255px;
+  color: #ffffff;
+}
+
+.hero-feature-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #ffffff;
+}
+
+.hero-feature-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hero-feature-divider {
+  width: 1px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.32);
+  margin: 0 14px;
+  flex-shrink: 0;
+}
+
+.hero-feature-text h4 {
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 3px;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+.hero-feature-text p {
+  font-size: 0.78rem;
+  line-height: 1.42;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0;
+}
+
+.hero-watermark-text {
+  font-size: clamp(4.5rem, 12.8vw, 13.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.82;
+  color: #ffffff;
+  text-shadow: 0 4px 32px rgba(0, 0, 0, 0.15);
+  user-select: none;
+  white-space: nowrap;
+  text-align: center;
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: -0.04em;
+}
+
+/* MOBILE HERO VIEW (Hidden on Desktop) */
+.hero-mobile-view,
+.hero-mobile-watermark {
+  display: none;
 }
 
 .hero-content-wrapper {
@@ -339,100 +479,36 @@ img {
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.18);
 }
 
-.hero-features-bar {
-  display: flex;
-  justify-content: flex-end;
-  gap: 48px;
-  margin-bottom: 24px;
-}
-
-.hero-feature-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  max-width: 280px;
-  color: #ffffff;
-}
-
-.hero-feature-icon {
-  width: 30px;
-  height: 30px;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.hero-feature-text h4 {
-  font-size: 0.98rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  margin-bottom: 4px;
-}
-
-.hero-feature-text p {
-  font-size: 0.84rem;
-  line-height: 1.45;
-  color: rgba(255, 255, 255, 0.85);
-}
-
 .hero-bottom-bar {
+  display: none;
   position: relative;
   z-index: 2;
   width: 100%;
   margin-top: auto;
-  display: flex;
   align-items: flex-end;
   justify-content: space-between;
   gap: 32px;
 }
 
-.hero-watermark-text {
-  font-size: clamp(3.6rem, 10.5vw, 10rem);
-  font-weight: 800;
-  letter-spacing: -0.05em;
-  line-height: 0.85;
-  color: #ffffff;
-  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
-  user-select: none;
-  white-space: nowrap;
-}
-
 .hero-explore-btn {
+  display: none;
   margin-bottom: 12px;
   flex-shrink: 0;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
-}
-
-.hero-scroll-indicator {
-  display: none;
-  text-align: center;
-  color: #ffffff;
-  font-size: 0.8rem;
-  margin-top: 24px;
-  position: relative;
-  z-index: 2;
-}
-
-.hero-scroll-indicator::after {
-  content: "";
-  display: block;
-  width: 1px;
-  height: 24px;
-  background: rgba(255, 255, 255, 0.6);
-  margin: 6px auto 0;
 }
 
 /* ==========================================================================
    PHILOSOPHY & INTRO SECTION (Image 2)
    ========================================================================== */
 .philosophy-section {
-  padding: 110px 0 60px;
+  padding: clamp(60px, 7vw, 100px) 0 clamp(16px, 2.5vw, 24px);
   background-color: var(--bg-white);
   text-align: center;
 }
 
 .philosophy-heading-box {
   max-width: 760px;
-  margin: 0 auto 36px;
+  margin: 0 auto clamp(20px, 3.5vw, 30px);
 }
 
 .philosophy-title-stack {
@@ -440,7 +516,13 @@ img {
   grid-template-areas: "titleStack";
   align-items: center;
   justify-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 0;
+}
+
+.philosophy-cta-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(14px, 2vw, 20px);
 }
 
 .philosophy-title {
@@ -517,7 +599,7 @@ img {
    PERSONALIZED TREATMENTS SECTION (Image 3)
    ========================================================================== */
 .treatments-section {
-  padding: 90px 0;
+  padding: clamp(32px, 4.5vw, 65px) 0 clamp(50px, 7vw, 90px);
   background-color: var(--bg-white);
 }
 
@@ -667,6 +749,14 @@ img {
   font-weight: 400;
   margin-left: 4px;
   margin-top: 2px;
+}
+
+.treatments-bottom-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 48px;
+  width: 100%;
 }
 
 /* ==========================================================================
@@ -1132,9 +1222,9 @@ img {
 
 .experts-title {
   font-size: clamp(2.4rem, 4.4vw, 3.8rem);
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: -0.035em;
-  line-height: 1.1;
+  line-height: 1.15;
   color: #121212;
   margin: 0;
 }
@@ -1649,26 +1739,17 @@ img {
 
 .statement-bottom {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-end;
-  gap: 40px;
-  margin-top: 60px;
+  margin-top: auto;
+  padding-top: 60px;
 }
 
 .statement-pills-col {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  max-width: 500px;
-}
-
-.statement-narrative-col {
-  display: flex;
-  gap: 32px;
-  max-width: 580px;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 0.9rem;
-  line-height: 1.5;
+  gap: 12px;
+  max-width: 600px;
 }
 
 .statement-narrative-col p {
@@ -2425,6 +2506,11 @@ img {
     font-size: 1.25rem;
   }
 
+  .brand-logo-img {
+    height: 46px;
+    max-width: 190px;
+  }
+
   .nav-links {
     display: none;
   }
@@ -2459,39 +2545,48 @@ img {
   }
 
   .hero-section {
-    padding-top: 140px;
-    padding-bottom: 24px;
+    padding-top: 80px;
+    padding-bottom: 12px;
     min-height: 100svh;
+    height: 100svh;
   }
 
   .hero-bg-image {
-    object-position: 50% 25%;
+    object-position: 50% 16%;
+  }
+
+  .hero-content-wrapper {
+    flex-grow: 0;
+    margin-top: auto;
+    margin-bottom: 10px;
   }
 
   .hero-main-copy {
-    margin-top: 40px;
-    margin-bottom: 24px;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   .hero-title {
-    font-size: 2.35rem;
+    font-size: 2rem;
     line-height: 1.15;
-    margin-bottom: 20px;
+    margin-bottom: 0;
+    text-align: left;
   }
 
   .hero-bottom-bar {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    margin-top: auto;
-    margin-bottom: 24px;
-    padding-bottom: 0;
+    align-items: center;
+    gap: 0;
+    margin-top: 0;
+    margin-bottom: 4px;
+    padding-bottom: 8px;
   }
 
   .hero-watermark-text {
     font-size: 3.2rem;
-    line-height: 0.95;
+    line-height: 0.92;
+    text-align: center;
     white-space: normal;
   }
 
@@ -2519,6 +2614,20 @@ img {
     margin: 8px auto 0;
   }
 
+  .philosophy-section {
+    padding-top: 48px;
+    padding-bottom: 12px;
+  }
+
+  .philosophy-cta-wrap {
+    margin-top: 12px;
+  }
+
+  .treatments-section {
+    padding-top: 24px;
+    padding-bottom: 50px;
+  }
+
   .treatments-header-row {
     flex-direction: column;
     align-items: flex-start;
@@ -2532,6 +2641,14 @@ img {
 
   .treatment-card {
     height: 400px;
+  }
+
+  .treatments-bottom-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+    width: 100%;
   }
 
   .values-grid {
@@ -2595,11 +2712,31 @@ img {
     margin-bottom: 6px;
   }
 
-  .conversation-bottom-row,
-  .statement-bottom {
+  .conversation-bottom-row {
     flex-direction: column;
     align-items: flex-start;
     gap: 24px;
+  }
+
+  .statement-content {
+    min-height: 540px;
+    padding: 55px 0 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .statement-bottom {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .statement-pills-col {
+    gap: 10px;
+    max-width: 100%;
   }
 
   .footer-top-grid {
@@ -2639,37 +2776,122 @@ img {
 }
 
 @media (max-width: 768px) {
-  .hero-explore-desktop {
+  /* Desktop Hero View is hidden on mobile */
+  .hero-desktop-view {
     display: none !important;
   }
 
-  .hero-bottom-bar {
-    justify-content: center !important;
-    padding-bottom: 24px !important;
+  /* Mobile Hero View is visible on mobile */
+  .hero-mobile-view {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    width: 100% !important;
+    position: relative !important;
+    z-index: 3 !important;
   }
 
-  .hero-watermark-text {
-    font-size: clamp(2.4rem, 11vw, 3.8rem) !important;
-    text-align: center !important;
+  /* Vertical White Naturals Watermark along right edge (Matches reference image) */
+  .hero-mobile-watermark {
+    display: flex !important;
+    position: absolute !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    height: 100% !important;
+    width: auto !important;
+    align-items: flex-end !important;
+    justify-content: flex-end !important;
+    z-index: 3 !important;
+    pointer-events: none !important;
+  }
+
+  .hero-mobile-watermark-img {
+    display: block !important;
+    position: relative !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    height: 82svh !important;
+    max-height: 730px !important;
+    width: auto !important;
+    max-width: none !important;
+    opacity: 0.88 !important;
+  }
+
+  /* Mobile Hero Section: Exact 100svh first view with items positioned from bottom up */
+  .hero-section {
+    padding-top: 76px !important;
+    padding-bottom: 24px !important;
+    min-height: 100svh !important;
+    height: 100svh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  /* Position lady's face so her chin gracefully reaches the top of the 3-line title */
+  .hero-bg-image {
+    object-position: 50% 16% !important;
+  }
+
+  /* Smooth gradient overlay to ensure perfect contrast under chin */
+  .hero-overlay-gradient {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.25) 0%,
+      rgba(0, 0, 0, 0.02) 20%,
+      rgba(0, 0, 0, 0.06) 42%,
+      rgba(0, 0, 0, 0.42) 62%,
+      rgba(0, 0, 0, 0.78) 100%
+    ) !important;
+  }
+
+  /* Content wrapper placed at bottom, aligned to left side, clean and neat */
+  .hero-content-wrapper {
+    flex-grow: 0 !important;
+    margin-top: auto !important;
+    margin-bottom: 32px !important;
+    padding-left: 20px !important;
+    padding-right: 0 !important;
     width: 100% !important;
-    margin: 0 auto !important;
+    max-width: calc(100% - 92px) !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    z-index: 4 !important;
+    display: block !important;
+  }
+
+  /* Hero Title aligned to left side */
+  .hero-main-copy {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    text-align: left !important;
+    max-width: 100% !important;
+  }
+
+  .hero-title {
+    font-size: clamp(1.82rem, 7.2vw, 2.18rem) !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.03em !important;
+    text-align: left !important;
+    margin-bottom: 0 !important;
+    color: #ffffff !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7) !important;
+    font-weight: 600 !important;
+  }
+
+  /* Explore Treatments CTA removed in mobile mode as requested */
+  .hero-bottom-bar {
+    display: none !important;
+  }
+
+  .hero-explore-btn {
+    display: none !important;
   }
 
   .hero-explore-after-scroll {
-    display: flex !important;
-    justify-content: center !important;
-    padding: 16px 20px 24px 20px !important;
-    background: var(--bg-white, #ffffff);
-    width: 100% !important;
-    box-sizing: border-box !important;
-    position: relative !important;
-    z-index: 5 !important;
-  }
-
-  .hero-explore-after-scroll .btn-pill {
-    width: 100% !important;
-    max-width: 380px !important;
-    justify-content: center !important;
+    display: none !important;
   }
 }
 
