@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naturals Salon & Skincare | Kottakkal, Kerala</title>
+  <meta name="description" content="Naturals Salon at Al Wahad Complex, Changuvetty, Kottakkal. Premium skin treatments, facials, bridal makeup, hair care & keratin treatments. Rated 4.8/5 on Google.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="assets/images/hero-skincare.jpg">
+  <link rel="preload" as="image" href="assets/images/hero-haircare.jpg">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       SITE HEADER
+       ========================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container-wide nav-wrapper">
+      <a href="#" class="brand-logo" id="brandLogo">Naturals Salon</a>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#treatments">Treatments</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#experts">Experts</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+
+      <div class="nav-cta-group">
+        <button class="btn-pill open-modal-btn" aria-label="Book a Consultation">
+          <span>Book a Consultation</span>
+          <span class="arrow-circle">→</span>
+        </button>
+
+        <button class="mobile-menu-toggle" id="menuToggle" aria-label="Open mobile navigation menu">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu (Matching Mobile UI) -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div>
+      <div class="mobile-drawer-header">
+        <div class="brand-logo" style="color: #121212;">Naturals Salon</div>
+        <button id="closeDrawerBtn" style="font-size: 1.8rem; cursor: pointer; padding: 4px;">&times;</button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="#home" class="mobile-nav-link">Home</a></li>
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#treatments" class="mobile-nav-link">Treatments</a></li>
+        <li><a href="#journey" class="mobile-nav-link">Journey</a></li>
+        <li><a href="#experts" class="mobile-nav-link">Experts</a></li>
+        <li><a href="#location" class="mobile-nav-link">Location</a></li>
+        <li><a href="#reviews" class="mobile-nav-link">Reviews</a></li>
+      </ul>
+    </div>
+    <div>
+      <button class="btn-pill open-modal-btn" style="width: 100%; justify-content: center;">
+        <span>Book a Consultation</span>
+        <span class="arrow-circle">→</span>
+      </button>
+      <p style="font-size: 0.85rem; color: #888; text-align: center; margin-top: 16px;">
+        1st Floor, Al Wahad Complex, Kottakkal<br>Tel: 092071 21213
+      </p>
+    </div>
+  </div>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION (Reference Image 1 & 10)
+         ========================================================================== -->
+    <section class="hero-section" id="home">
+      <div class="hero-bg-container">
+        <img src="assets/images/hero-skincare.jpg" alt="Glowing radiant skincare client" class="hero-bg-image">
+        <div class="hero-overlay-gradient"></div>
+      </div>
+
+      <div class="container-wide hero-content-wrapper">
+        <div class="hero-main-copy">
+          <h1 class="hero-title">Beauty begins with the way you care for yourself</h1>
+        </div>
+      </div>
+
+      <!-- Massive Watermark Brand Typography with Explore Treatments CTA beside it -->
+      <div class="container-wide hero-bottom-bar">
+        <div class="hero-watermark-text">Naturals Salon</div>
+        <button class="btn-pill hero-explore-btn hero-explore-desktop" onclick="document.getElementById('treatments').scrollIntoView({behavior: 'smooth'})" aria-label="Explore Treatments">
+          <span>Explore Treatments</span>
+          <span class="arrow-circle">→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Mobile Explore Treatments CTA - Only seen after a small scroll below first view -->
+    <div class="hero-explore-after-scroll" id="heroExploreAfterScroll">
+      <button class="btn-pill hero-explore-btn" onclick="document.getElementById('treatments').scrollIntoView({behavior: 'smooth'})" aria-label="Explore Treatments">
+        <span>Explore Treatments</span>
+        <span class="arrow-circle">→</span>
+      </button>
+    </div>
+
+    <!-- ==========================================================================
+         PHILOSOPHY SECTION (Reference Image 2) - Two-State Skin <-> Hair Transition
+         ========================================================================== -->
+    <section class="philosophy-section" id="about">
+      <div class="container">
+        <div class="philosophy-heading-box">
+          <div class="philosophy-title-stack">
+            <!-- State 1: Skin -->
+            <h2 class="philosophy-title philosophy-title-layer philosophy-title-skin active" data-state="skin">
+              Beauty begins <span class="title-light">with</span><br>
+              <span class="title-light">understanding</span> your skin.
+            </h2>
+            <!-- State 2: Hair -->
+            <h2 class="philosophy-title philosophy-title-layer philosophy-title-hair" data-state="hair">
+              Healthy hair begins <span class="title-light">with</span><br>
+              care made <span class="title-light">just for you.</span>
+            </h2>
+          </div>
+          <button class="btn-pill" onclick="document.getElementById('location').scrollIntoView({behavior: 'smooth'})">
+            <span>About Us</span>
+            <span class="arrow-circle">→</span>
+          </button>
+        </div>
+
+        <div class="philosophy-media-box">
+          <!-- State 1: Skin Image -->
+          <div class="philosophy-media-layer philosophy-media-skin active" data-state="skin">
+            <img src="assets/images/philosophy-skin.jpg" alt="Radiant dewy face representing skin health" class="philosophy-img">
+          </div>
+          <!-- State 2: Hair Image -->
+          <div class="philosophy-media-layer philosophy-media-hair" data-state="hair">
+            <img src="assets/images/hero-haircare.jpg" alt="Healthy hair care client representing hair health" class="philosophy-img philosophy-img-hair">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PERSONALIZED TREATMENTS GRID (Reference Image 3)
+         ========================================================================== -->
+    <section class="treatments-section" id="treatments">
+      <div class="container">
+        <div class="treatments-header-row">
+          <h2 class="treatments-title">
+            Personalized treatments<br>
+            for <span class="title-light">every skin</span> journey.
+          </h2>
+          <button class="btn-pill open-modal-btn">
+            <span>Explore Our Treatments</span>
+            <span class="arrow-circle">→</span>
+          </button>
+        </div>
+
+        <div class="treatments-grid">
+          <!-- Card 1 -->
+          <div class="treatment-card open-modal-btn" data-treatment="Facial Rejuvenation">
+            <img src="assets/images/treatment-facial.jpg" alt="Facial Rejuvenation Treatment" class="treatment-card-bg">
+            <div class="treatment-card-gradient"></div>
+            <div class="treatment-top-bar">
+              <span class="treatment-category-tag">Facial Rejuvenation</span>
+              <div class="treatment-action-btn">→</div>
+            </div>
+            <div class="treatment-bottom-content">
+              <div class="treatment-info-left">
+                <h3 class="treatment-name">Skin Renewal</h3>
+                <p class="treatment-desc">Restores radiance and smooth skin texture.</p>
+              </div>
+              <div class="treatment-duration-badge">
+                2-3 <span>m</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="treatment-card open-modal-btn" data-treatment="Skin Therapy">
+            <img src="assets/images/treatment-therapy.jpg" alt="Skin Therapy Treatment" class="treatment-card-bg">
+            <div class="treatment-card-gradient"></div>
+            <div class="treatment-top-bar">
+              <span class="treatment-category-tag">Skin Therapy</span>
+              <div class="treatment-action-btn">→</div>
+            </div>
+            <div class="treatment-bottom-content">
+              <div class="treatment-info-left">
+                <h3 class="treatment-name">Vitamin C Treatment</h3>
+                <p class="treatment-desc">Brightens skin, evens tone and protects from environmental damage.</p>
+              </div>
+              <div class="treatment-duration-badge">
+                1-2 <span>m</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="treatment-card open-modal-btn" data-treatment="Acne & Clarifying Care">
+            <img src="assets/images/treatment-acne.jpg" alt="Acne & Clarifying Care" class="treatment-card-bg">
+            <div class="treatment-card-gradient"></div>
+            <div class="treatment-top-bar">
+              <span class="treatment-category-tag">Acne & Clarifying Care</span>
+              <div class="treatment-action-btn">→</div>
+            </div>
+            <div class="treatment-bottom-content">
+              <div class="treatment-info-left">
+                <h3 class="treatment-name">BHA Renewal Peel</h3>
+                <p class="treatment-desc">Clears pores, reduces acne and improves overall skin clarity.</p>
+              </div>
+              <div class="treatment-duration-badge">
+                2-3 <span>m</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CARE DESIGN VALUES (Reference Image 4)
+         ========================================================================== -->
+    <section class="values-section">
+      <div class="container">
+        <h2 class="values-title">
+          Care designed <span class="title-light">around</span><br>
+          <span class="title-light">what makes</span> you unique.
+        </h2>
+
+        <div class="values-grid">
+          <!-- Col 1 -->
+          <div class="value-col">
+            <div class="value-icon-circle">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="15" y1="9" x2="9" y2="15"></line>
+                <line x1="9" y1="9" x2="15" y2="15"></line>
+              </svg>
+            </div>
+            <h3>Personalized Care</h3>
+            <p>Tailored to your skin and goals.</p>
+          </div>
+
+          <!-- Col 2 -->
+          <div class="value-col">
+            <div class="value-icon-circle">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"></path>
+                <path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"></path>
+                <circle cx="20" cy="10" r="2"></circle>
+              </svg>
+            </div>
+            <h3>Medical Expertise</h3>
+            <p>Clinical care with proven expertise.</p>
+          </div>
+
+          <!-- Col 3 -->
+          <div class="value-col">
+            <div class="value-icon-circle">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+              </svg>
+            </div>
+            <h3>Natural-Looking Results</h3>
+            <p>Subtle results that still feel like you.</p>
+          </div>
+
+          <!-- Col 4 -->
+          <div class="value-col">
+            <div class="value-icon-circle">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <polyline points="9 12 11 14 15 10"></polyline>
+              </svg>
+            </div>
+            <h3>Long-Term Skin Health</h3>
+            <p>Care designed for better skin health.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PERSONALIZED JOURNEY (Desktop: Circular Process Wheel / Mobile: Vertical Timeline)
+         ========================================================================== -->
+    <section class="journey-section" id="journey">
+      <div class="container">
+        <!-- Header -->
+        <div class="journey-header">
+          <h2 class="journey-title">
+            A personalized journey<br>
+            designed around <span class="title-light">your skin,</span><br>
+            goals, and long-term results.
+          </h2>
+          <button class="btn-pill open-modal-btn" aria-label="Book a Consultation">
+            <span>Book a Consultation</span>
+            <span class="arrow-circle">→</span>
+          </button>
+        </div>
+
+        <!-- DESKTOP MODE: Circular Process Wheel (Reference Image 5) -->
+        <div class="journey-wheel-container">
+          <!-- Main Outer Axis Geometry -->
+          <div class="wheel-outer-circle">
+            <div class="wheel-axis-v"></div>
+            <div class="wheel-axis-h"></div>
+            <!-- Quadrant 02 highlighted in warm beige tint matching reference -->
+            <div class="wheel-quadrant-bg" id="wheelQuadrantTint"></div>
+          </div>
+
+          <!-- Central Core Milestone -->
+          <div class="wheel-center-badge">
+            <h4>Your skin <span style="color: #999; font-weight: 400;">deserves</span></h4>
+            <p>more than basics.</p>
+          </div>
+
+          <!-- Step 01: Consultation -->
+          <div class="wheel-step-node step-node-1" data-step="1">
+            <div class="step-photo-circle">
+              <img src="assets/images/journey-consultation.jpg" alt="Consultation" loading="lazy">
+            </div>
+            <div class="step-meta-box">
+              <div class="step-number-badge">01</div>
+              <div class="step-label">Consultation</div>
+            </div>
+          </div>
+
+          <!-- Step 02: Personalized Plan (Highlighted) -->
+          <div class="wheel-step-node step-node-2 active" data-step="2">
+            <div class="step-photo-circle">
+              <img src="assets/images/journey-plan.jpg" alt="Personalized Plan" loading="lazy">
+            </div>
+            <div class="step-meta-box">
+              <div class="step-number-badge">02</div>
+              <div class="step-label">Personalized Plan</div>
+            </div>
+          </div>
+
+          <!-- Step 03: Expert Treatment -->
+          <div class="wheel-step-node step-node-3" data-step="3">
+            <div class="step-photo-circle">
+              <img src="assets/images/journey-treatment.jpg" alt="Expert Treatment" loading="lazy">
+            </div>
+            <div class="step-meta-box">
+              <div class="step-number-badge">03</div>
+              <div class="step-label">Expert Treatment</div>
+            </div>
+          </div>
+
+          <!-- Step 04: Ongoing Care -->
+          <div class="wheel-step-node step-node-4" data-step="4">
+            <div class="step-photo-circle">
+              <img src="assets/images/journey-ongoing.jpg" alt="Ongoing Care" loading="lazy">
+            </div>
+            <div class="step-meta-box">
+              <div class="step-number-badge">04</div>
+              <div class="step-label">Ongoing Care</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MOBILE MODE: Vertical Alternating Timeline (from Reference Image) -->
+        <div class="journey-mobile-timeline-wrapper">
+          <!-- Central Feature Badge -->
+          <div class="journey-badge-card">
+            <h3 class="journey-badge-title">Your skin <span class="title-light">deserves</span></h3>
+            <p class="journey-badge-subtitle">more than basics.</p>
+          </div>
+
+          <!-- Vertical Alternating Timeline -->
+          <div class="journey-timeline">
+            <div class="journey-timeline-line"></div>
+
+            <!-- Step 01: Consultation -->
+            <div class="timeline-row row-left">
+              <div class="timeline-photo-side">
+                <div class="timeline-photo-circle">
+                  <img src="assets/images/journey-consultation.jpg" alt="Consultation" loading="lazy">
+                </div>
+              </div>
+              <div class="timeline-node-pin">
+                <span class="timeline-pin-dot"></span>
+              </div>
+              <div class="timeline-content-side">
+                <div class="timeline-number-pill">01</div>
+                <h3 class="timeline-step-title">Consultation</h3>
+                <p class="timeline-step-desc">Understand your concerns and goals with our experts.</p>
+              </div>
+            </div>
+
+            <!-- Step 02: Personalized Plan -->
+            <div class="timeline-row row-right">
+              <div class="timeline-content-side text-right">
+                <div class="timeline-number-pill">02</div>
+                <h3 class="timeline-step-title">Personalized Plan</h3>
+                <p class="timeline-step-desc">A treatment plan tailored to your unique needs.</p>
+              </div>
+              <div class="timeline-node-pin">
+                <span class="timeline-pin-dot"></span>
+              </div>
+              <div class="timeline-photo-side">
+                <div class="timeline-photo-circle">
+                  <img src="assets/images/journey-plan.jpg" alt="Personalized Plan" loading="lazy">
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 03: Expert Treatment -->
+            <div class="timeline-row row-left">
+              <div class="timeline-photo-side">
+                <div class="timeline-photo-circle">
+                  <img src="assets/images/journey-treatment.jpg" alt="Expert Treatment" loading="lazy">
+                </div>
+              </div>
+              <div class="timeline-node-pin">
+                <span class="timeline-pin-dot"></span>
+              </div>
+              <div class="timeline-content-side">
+                <div class="timeline-number-pill">03</div>
+                <h3 class="timeline-step-title">Expert Treatment</h3>
+                <p class="timeline-step-desc">Advanced, safe and effective treatments by professionals.</p>
+              </div>
+            </div>
+
+            <!-- Step 04: Ongoing Care -->
+            <div class="timeline-row row-right">
+              <div class="timeline-content-side text-right">
+                <div class="timeline-number-pill">04</div>
+                <h3 class="timeline-step-title">Ongoing Care</h3>
+                <p class="timeline-step-desc">Continuous support for healthy, glowing skin.</p>
+              </div>
+              <div class="timeline-node-pin">
+                <span class="timeline-pin-dot"></span>
+              </div>
+              <div class="timeline-photo-side">
+                <div class="timeline-photo-circle">
+                  <img src="assets/images/journey-ongoing.jpg" alt="Ongoing Care" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         DOCTORS / MEET OUR EXPERTS SECTION
+         ========================================================================== -->
+    <section class="experts-section" id="experts">
+      <div class="container-wide">
+        <!-- Section Header Row -->
+        <div class="experts-header-row">
+          <div class="experts-title-group">
+            <span class="experts-overline">OUR EXPERTS</span>
+            <div class="experts-heading-wrap">
+              <h2 class="experts-title">Meet Our Experts</h2>
+              <div class="experts-header-divider"></div>
+              <p class="experts-subtitle">
+                Our experienced professionals bring skill, care and a deep understanding of your beauty goals.
+              </p>
+            </div>
+          </div>
+
+          <!-- Carousel Arrow Controls -->
+          <div class="experts-nav-arrows">
+            <button class="expert-nav-btn expert-prev" id="expertPrevBtn" aria-label="Previous expert">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+            </button>
+            <button class="expert-nav-btn expert-next" id="expertNextBtn" aria-label="Next expert">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Experts Slider Viewport & Track -->
+        <div class="experts-slider-viewport" id="expertsViewport">
+                    <div class="experts-slider-track" id="expertsTrack">
+            <!-- Doctor 1 -->
+            <div class="expert-card" data-doctor="Dr. Anjali Nair" data-role="Skin Specialist">
+              <div class="expert-mobile-header">
+                <span class="expert-badge-verified">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                  Certified Dermatologist
+                </span>
+                <span class="expert-counter">01 / 08</span>
+              </div>
+              <div class="expert-image-box">
+                <img src="assets/images/doctor-anjali-nair.jpg" alt="Dr. Anjali Nair - Skin Specialist" loading="lazy">
+              </div>
+              <div class="expert-info">
+                <span class="expert-mobile-tag">SKIN SPECIALIST</span>
+                <h3 class="expert-name">Dr. Anjali Nair</h3>
+                <p class="expert-role">SKIN SPECIALIST</p>
+                <div class="expert-accent-line"></div>
+                <p class="expert-mobile-desc">Clinical Dermatology & Aesthetic Skin Rejuvenation</p>
+                <div class="expert-action-row open-modal-btn">
+                  <span class="expert-action-text">View Profile</span>
+                  <span class="expert-arrow-circle">→</span>
+                </div>
+                <button class="expert-mobile-cta open-modal-btn" type="button" aria-label="Book Consultation with Dr. Anjali Nair">
+                  <span>Book Consultation</span>
+                  <span class="expert-cta-arrow">→</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Doctor 2 -->
+            <div class="expert-card" data-doctor="Dr. Muhammed Riyas" data-role="Hair Specialist">
+              <div class="expert-mobile-header">
+                <span class="expert-badge-verified">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                  Certified Trichologist
+                </span>
+                <span class="expert-counter">02 / 08</span>
+              </div>
+              <div class="expert-image-box">
+                <img src="assets/images/doctor-muhammed-riyas.jpg" alt="Dr. Muhammed Riyas - Hair Specialist" loading="lazy">
+              </div>
+              <div class="expert-info">
+                <span class="expert-mobile-tag">HAIR SPECIALIST</span>
+                <h3 class="expert-name">Dr. Muhammed Riyas</h3>
+                <p class="expert-role">HAIR SPECIALIST</p>
+                <div class="expert-accent-line"></div>
+                <p class="expert-mobile-desc">Follicular Health & Advanced Scalp Therapies</p>
+                <div class="expert-action-row open-modal-btn">
+                  <span class="expert-action-text">View Profile</span>
+                  <span class="expert-arrow-circle">→</span>
+                </div>
+                <button class="expert-mobile-cta open-modal-btn" type="button" aria-label="Book Consultation with Dr. Muhammed Riyas">
+                  <span>Book Consultation</span>
+                  <span class="expert-cta-arrow">→</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Doctor 3 -->
+            <div class="expert-card" data-doctor="Dr. Fathima Sherin" data-role="Beauty Expert">
+              <div class="expert-mobile-header">
+                <span class="expert-badge-verified">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                  Aesthetic Specialist
+                </span>
+                <span class="expert-counter">03 / 08</span>
+              </div>
+              <div class="expert-image-box">
+                <img src="assets/images/doctor-fathima-sherin.jpg" alt="Dr. Fathima Sherin - Beauty Expert" loading="lazy">
+              </div>
+              <div class="expert-info">
+                <span class="expert-mobile-tag">BEAUTY EXPERT</span>
+                <h3 class="expert-name">Dr. Fathima Sherin</h3>
+                <p class="expert-role">BEAUTY EXPERT</p>
+                <div class="expert-accent-line"></div>
+                <p class="expert-mobile-desc">Holistic Glow Formulations & Skin Health Protocols</p>
+                <div class="expert-action-row open-modal-btn">
+                  <span class="expert-action-text">View Profile</span>
+                  <span class="expert-arrow-circle">→</span>
+                </div>
+                <button class="expert-mobile-cta open-modal-btn" type="button" aria-label="Book Consultation with Dr. Fathima Sherin">
+                  <span>Book Consultation</span>
+                  <span class="expert-cta-arrow">→</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Doctor 4 -->
+            <div class="expert-card" data-doctor="Dr. Salman K" data-role="Aesthetic Physician">
+              <div class="expert-mobile-header">
+                <span class="expert-badge-verified">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                  Aesthetic Physician
+                </span>
+                <span class="expert-counter">04 / 08</span>
+              </div>
+              <div class="expert-image-box">
+                <img src="assets/images/doctor-salman-k.jpg" alt="Dr. Salman K - Aesthetic Physician" loading="lazy">
+              </div>
+              <div class="expert-info">
+                <span class="expert-mobile-tag">AESTHETIC PHYSICIAN</span>
+                <h3 class="expert-name">Dr. Salman K</h3>
+                <p class="expert-role">AESTHETIC PHYSICIAN</p>
+                <div class="expert-accent-line"></div>
+                <p class="expert-mobile-desc">Targeted Anti-Ageing & Non-Invasive Procedures</p>
+                <div class="expert-action-row open-modal-btn">
+                  <span class="expert-action-text">View Profile</span>
+                  <span class="expert-arrow-circle">→</span>
+                </div>
+                <button class="expert-mobile-cta open-modal-btn" type="button" aria-label="Book Consultation with Dr. Salman K">
+                  <span>Book Consultation</span>
+                  <span class="expert-cta-arrow">→</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Doctor 5 -->
+            <div class="expert-card" data-doctor="Dr. Priya Menon" data-role="Trichologist">
+              <div class="expert-mobile-header">
+                <span class="expert-badge-verified">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                  Trichology Specialist
+                </span>
+                <span class="expert-counter">05 / 08</span>
+              </div>
+              <div class="expert-image-box">
+                <img src="assets/images/doctor-priya-menon.jpg" alt="Dr. Priya Menon - Trichologist & Scalp Specialist" loading="lazy">
+              </div>
+              <div class="expert-info">
+                <span class="expert-mobile-tag">TRICHOLOGIST</span>
+                <h3 class="expert-name">Dr. Priya Menon</h3>
+                <p class="expert-role">TRICHOLOGIST</p>
+                <div class="expert-accent-line"></div>
+                <p class="expert-mobile-desc">Targeted Follicular Regeneration & Scalp Care</p>
+                <div class="expert-action-row open-modal-btn">
+                  <span class="expert-action-text">View Profile</span>
+                  <span class="expert-arrow-circle">→</span>
+                </div>
+                <button class="expert-mobile-cta open-modal-btn" type="button" aria-label="Book Consultation with Dr. Priya Menon">
+                  <span>Book Consultation</span>
+                  <span class="expert-cta-arrow">→</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Doctor 6 -->
+            <div class="expert-card" data-doctor="Dr. Arjun Varma" data-role="Laser Specialist">
+              <div class="expert-mobile-header">
+                <span class="expert-badge-verified">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                  Laser & Skin Expert
+                </span>
+                <span class="expert-counter">06 / 08</span>
+              </div>
+              <div class="expert-image-box">
+                <img src="assets/images/doctor-arjun-varma.jpg" alt="Dr. Arjun Varma - Laser Specialist" loading="lazy">
+              </div>
+              <div class="expert-info">
+                <span class="expert-mobile-tag">LASER SPECIALIST</span>
+                <h3 class="expert-name">Dr. Arjun Varma</h3>
+                <p class="expert-role">LASER SPECIALIST</p>
+                <div class="expert-accent-line"></div>
+                <p class="expert-mobile-desc">Pigmentation Correction & Advanced Laser Resurfacing</p>
+                <div class="expert-action-row open-modal-btn">
+                  <span class="expert-action-text">View Profile</span>
+                  <span class="expert-arrow-circle">→</span>
+                </div>
+                <button class="expert-mobile-cta open-modal-btn" type="button" aria-label="Book Consultation with Dr. Arjun Varma">
+                  <span>Book Consultation</span>
+                  <span class="expert-cta-arrow">→</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Doctor 7 -->
+            <div class="expert-card" data-doctor="Dr. Aisha Rahman" data-role="Cosmetologist">
+              <div class="expert-mobile-header">
+                <span class="expert-badge-verified">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                  Clinical Cosmetologist
+                </span>
+                <span class="expert-counter">07 / 08</span>
+              </div>
+              <div class="expert-image-box">
+                <img src="assets/images/doctor-aisha-rahman.jpg" alt="Dr. Aisha Rahman - Cosmetologist" loading="lazy">
+              </div>
+              <div class="expert-info">
+                <span class="expert-mobile-tag">COSMETOLOGIST</span>
+                <h3 class="expert-name">Dr. Aisha Rahman</h3>
+                <p class="expert-role">COSMETOLOGIST</p>
+                <div class="expert-accent-line"></div>
+                <p class="expert-mobile-desc">Custom Chemical Peels & Medical Facial Artistry</p>
+                <div class="expert-action-row open-modal-btn">
+                  <span class="expert-action-text">View Profile</span>
+                  <span class="expert-arrow-circle">→</span>
+                </div>
+                <button class="expert-mobile-cta open-modal-btn" type="button" aria-label="Book Consultation with Dr. Aisha Rahman">
+                  <span>Book Consultation</span>
+                  <span class="expert-cta-arrow">→</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Doctor 8 -->
+            <div class="expert-card" data-doctor="Dr. Rahul Das" data-role="Hair Restoration">
+              <div class="expert-mobile-header">
+                <span class="expert-badge-verified">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                  Hair Restoration Expert
+                </span>
+                <span class="expert-counter">08 / 08</span>
+              </div>
+              <div class="expert-image-box">
+                <img src="assets/images/doctor-rahul-das.jpg" alt="Dr. Rahul Das - Hair Restoration Expert" loading="lazy">
+              </div>
+              <div class="expert-info">
+                <span class="expert-mobile-tag">HAIR RESTORATION</span>
+                <h3 class="expert-name">Dr. Rahul Das</h3>
+                <p class="expert-role">HAIR RESTORATION</p>
+                <div class="expert-accent-line"></div>
+                <p class="expert-mobile-desc">Platelet-Rich Plasma & Hair Density Transformation</p>
+                <div class="expert-action-row open-modal-btn">
+                  <span class="expert-action-text">View Profile</span>
+                  <span class="expert-arrow-circle">→</span>
+                </div>
+                <button class="expert-mobile-cta open-modal-btn" type="button" aria-label="Book Consultation with Dr. Rahul Das">
+                  <span>Book Consultation</span>
+                  <span class="expert-cta-arrow">→</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="experts-slider-dots" id="expertsDots">
+          <button class="experts-dot active" data-slide-index="0" aria-label="Slide 1"></button>
+          <button class="experts-dot" data-slide-index="1" aria-label="Slide 2"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONVERSATION BANNER (Reference Image 6)
+         ========================================================================== -->
+    <section class="conversation-section">
+      <div class="conversation-bg">
+        <img src="assets/images/conversation-banner.jpg" alt="Skincare consultation conversation">
+      </div>
+      <div class="conversation-overlay"></div>
+
+      <div class="container conversation-content">
+        <div class="conversation-top">
+          <h2 class="conversation-title">
+            Healthy skin starts with<br>the right conversation.
+          </h2>
+          <div class="conversation-tags-row">
+            <span class="tag-pill">Expert Guidance</span>
+            <span class="tag-pill">Personalized Plans</span>
+            <span class="tag-pill">Advanced Treatments</span>
+            <span class="tag-pill">Science-Led Technology</span>
+            <span class="tag-pill">Long-Term Skin Health</span>
+          </div>
+        </div>
+
+        <div class="conversation-bottom-row">
+          <div class="conversation-copy-col">
+            <p>Every consultation is a step toward skin that feels, and looks, like you — with care plans tailored to real results.</p>
+          </div>
+          <div class="conversation-copy-col">
+            <p>We take time to understand your skin, concerns, and goals, offering expert guidance and treatments designed around you.</p>
+          </div>
+          <button class="btn-pill open-modal-btn">
+            <span>Consult Us</span>
+            <span class="arrow-circle">→</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         BEAUTY STATEMENT MACRO BANNER (Reference Image 7)
+         ========================================================================== -->
+    <section class="statement-section">
+      <div class="statement-bg">
+        <img src="assets/images/macro-skin.jpg" alt="Natural skin texture macro closeup">
+      </div>
+      <div class="statement-overlay"></div>
+
+      <div class="container statement-content">
+        <div class="statement-top">
+          <h2 class="statement-title">
+            Beauty isn't about<br>changing who you are.
+          </h2>
+          <button class="btn-pill open-modal-btn">
+            <span>Book a Consultation</span>
+            <span class="arrow-circle">→</span>
+          </button>
+        </div>
+
+        <div class="statement-bottom">
+          <div class="statement-pills-col">
+            <span class="tag-pill">Facial Rejuvenation</span>
+            <span class="tag-pill">Hydrafacial</span>
+            <span class="tag-pill">Laser Treatments</span>
+            <span class="tag-pill">Skin Therapy</span>
+            <span class="tag-pill">Melasma Solutions</span>
+            <span class="tag-pill">Keratin & Hair Spa</span>
+          </div>
+
+          <div class="statement-narrative-col">
+            <p>Your skin's unique story deserves care that's as individual as you are. We focus on real solutions for real skin.</p>
+            <p>From acne and dullness to fine lines and pigmentation, our expert guidance helps you achieve healthier, brighter, more confident skin.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         KOTTAKKAL LOCATION & SALON EXTERIOR SHOWCASE (Specific User Location)
+         ========================================================================== -->
+    <section class="location-section" id="location">
+      <div class="container">
+        <div class="location-grid">
+          <!-- Left: Real Exterior Visual -->
+          <div class="location-media-card">
+            <img src="assets/images/salon-exterior.jpg" alt="Naturals Salon 1st Floor, Al Wahad Complex, Kottakkal">
+            <div class="location-badge-overlay">
+              1st Floor • Al Wahad Complex
+            </div>
+            <div class="location-rating-card">
+              <div class="rating-score">★ 4.8</div>
+              <div class="rating-details">
+                <h5>Google Verified Rating</h5>
+                <p>815+ Verified Client Reviews</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Salon & Booking Details -->
+          <div class="location-info-col">
+            <span style="font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.1em; color: #888; font-weight: 600;">Visit Our Clinic & Salon</span>
+            <h2 style="margin-top: 6px;">Naturals Salon Kottakkal</h2>
+            <p style="color: #666; font-size: 0.95rem; line-height: 1.6;">
+              Experience world-class beauty and clinical skin therapy in Changuvetty, Kottakkal. Set in the contemporary Al Wahad Complex, our first-floor salon offers private aesthetic consultation rooms, warm natural light, and expert therapists.
+            </p>
+
+            <div class="location-address-box">
+              <div class="address-line">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <div>
+                  <strong>Al Wahad Complex, 1st Floor</strong><br>
+                  Opposite PWD Rest House, Changuvetty,<br>
+                  Kottakkal, Kerala 676501, India
+                </div>
+              </div>
+
+              <div class="address-line">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <div>
+                  <strong>Direct Line / WhatsApp:</strong><br>
+                  <a href="tel:09207121213" style="color: #000; font-weight: 600;">092071 21213</a>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <span style="font-size: 0.85rem; font-weight: 600; color: #444;">Available Specialties:</span>
+              <div class="services-chips">
+                <span class="service-chip">Skin Lightening</span>
+                <span class="service-chip">Skin Treatments</span>
+                <span class="service-chip">Facials</span>
+                <span class="service-chip">Bridal Makeup</span>
+                <span class="service-chip">Scalp Treatments</span>
+                <span class="service-chip">Keratin Treatment</span>
+                <span class="service-chip">Hair Straightening</span>
+                <span class="service-chip">Balayage & Coloring</span>
+                <span class="service-chip">Manicure & Pedicure</span>
+              </div>
+            </div>
+
+            <div style="margin-top: 28px;">
+              <button class="btn-pill open-modal-btn">
+                <span>Reserve Kottakkal Appointment</span>
+                <span class="arrow-circle">→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- ==========================================================================
+         CLIENT & CLINIC REVIEWS SECTION (Replaces FAQ)
+         ========================================================================== -->
+<section class="reviews-section" id="reviews">
+      <div class="container-wide">
+        <!-- Section Header -->
+        <div class="reviews-header">
+          <div class="reviews-header-left">
+            <div class="reviews-badge">
+              <span class="reviews-stars-summary">★★★★★</span>
+              <span class="reviews-badge-text"><strong>4.8 / 5.0</strong> Google Verified Rating (815+ Reviews)</span>
+            </div>
+            <h2 class="reviews-title">Loved by our clients & patients</h2>
+            <p class="reviews-subtitle">
+              Authentic stories and verified experiences from our Kottakkal clinic and partner clinical care network.
+            </p>
+          </div>
+
+          <div class="reviews-header-right">
+            <a href="https://maps.google.com" target="_blank" rel="noreferrer" class="reviews-google-btn">
+              <span>View on Google</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+            <div class="reviews-nav-controls">
+              <button class="reviews-arrow-btn prev-btn" id="reviewsPrevBtn" aria-label="Previous Reviews">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+              <button class="reviews-arrow-btn next-btn" id="reviewsNextBtn" aria-label="Next Reviews">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reviews Slider Viewport -->
+        <div class="reviews-slider-viewport" id="reviewsViewport">
+          <div class="reviews-slider-track" id="reviewsTrack">
+            <!-- Review Card 1 -->
+            <div class="review-card">
+              <div class="review-card-top">
+                <div class="review-category-pill">Painless Clinical Care</div>
+                <div class="review-stars">★★★★★</div>
+              </div>
+              <h3 class="review-lead">“Completely painless procedure with remarkable care”</h3>
+              <p class="review-body">
+                I was terrified of clinical procedures, but the doctors and specialists made the entire experience completely smooth and comforting. Modern equipment, pristine hygiene, and gentle handling were truly exceptional. Highly recommend!
+              </p>
+              <div class="review-footer">
+                <div class="review-avatar">MS</div>
+                <div class="review-author-info">
+                  <div class="review-author-name">Mohammed Shafi K.</div>
+                  <div class="review-author-meta">
+                    <span class="verified-check">✓</span> Google Verified · 5.0 ★
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review Card 2 -->
+            <div class="review-card">
+              <div class="review-card-top">
+                <div class="review-category-pill">Bespoke Treatment Protocol</div>
+                <div class="review-stars">★★★★★</div>
+              </div>
+              <h3 class="review-lead">“Clearly explained treatment timeline without hidden charges”</h3>
+              <p class="review-body">
+                Consulted here for specialized care. The specialist clearly explained the treatment timeline and cost without any hidden surprises. My confidence and skin texture have improved so much in just a few sessions!
+              </p>
+              <div class="review-footer">
+                <div class="review-avatar">AM</div>
+                <div class="review-author-info">
+                  <div class="review-author-name">Anjali Menon</div>
+                  <div class="review-author-meta">
+                    <span class="verified-check">✓</span> Google Verified · 5.0 ★
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review Card 3 -->
+            <div class="review-card">
+              <div class="review-card-top">
+                <div class="review-category-pill">Clinical Precision & Hygiene</div>
+                <div class="review-stars">★★★★★</div>
+              </div>
+              <h3 class="review-lead">“Spotlessly clean and equipped with modern technology”</h3>
+              <p class="review-body">
+                I had a wonderful experience at this clinic. The doctors and staff are incredibly professional, friendly, and welcoming. The clinic is spotlessly clean and equipped with modern technology. They explained the entire procedure clearly throughout.
+              </p>
+              <div class="review-footer">
+                <div class="review-avatar">DK</div>
+                <div class="review-author-info">
+                  <div class="review-author-name">Devadathan K.</div>
+                  <div class="review-author-meta">
+                    <span class="verified-check">✓</span> Google Verified · 5.0 ★
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review Card 4 -->
+            <div class="review-card">
+              <div class="review-card-top">
+                <div class="review-category-pill">Skin & Family Wellness</div>
+                <div class="review-stars">★★★★★</div>
+              </div>
+              <h3 class="review-lead">“Attentive, caring, and treatment provided with great perfection”</h3>
+              <p class="review-body">
+                Had a wonderful experience at the clinic. The doctor and staff were very polite, attentive, and caring. The treatment was provided with great care and perfection. Highly recommended to everyone looking for quality care in Kottakkal!
+              </p>
+              <div class="review-footer">
+                <div class="review-avatar">SF</div>
+                <div class="review-author-info">
+                  <div class="review-author-name">Sumayya Faizal</div>
+                  <div class="review-author-meta">
+                    <span class="verified-check">✓</span> Google Verified · 5.0 ★
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review Card 5 -->
+            <div class="review-card">
+              <div class="review-card-top">
+                <div class="review-category-pill">Deep Rejuvenation & Therapy</div>
+                <div class="review-stars">★★★★★</div>
+              </div>
+              <h3 class="review-lead">“Pristine hygiene and thorough consultation”</h3>
+              <p class="review-body">
+                Visited for deep therapeutic facial care and rejuvenation before a family wedding. The doctor patiently explained ongoing routine tips and sun protection. Spotless, soothing environment and wonderful results.
+              </p>
+              <div class="review-footer">
+                <div class="review-avatar">AN</div>
+                <div class="review-author-info">
+                  <div class="review-author-name">Aysha Nihala</div>
+                  <div class="review-author-meta">
+                    <span class="verified-check">✓</span> Google Verified · 5.0 ★
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review Card 6 -->
+            <div class="review-card">
+              <div class="review-card-top">
+                <div class="review-category-pill">Natural Restorative Results</div>
+                <div class="review-stars">★★★★★</div>
+              </div>
+              <h3 class="review-lead">“The precision and finish look completely natural”</h3>
+              <p class="review-body">
+                Got restorative treatment done for my family. The precision and finish look completely natural. The clinic hygiene, courteous demeanor, and post-treatment follow-up calls were exceptional.
+              </p>
+              <div class="review-footer">
+                <div class="review-avatar">SK</div>
+                <div class="review-author-info">
+                  <div class="review-author-name">Sujith Kumar P.</div>
+                  <div class="review-author-meta">
+                    <span class="verified-check">✓</span> Google Verified · 5.0 ★
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review Card 7 -->
+            <div class="review-card">
+              <div class="review-card-top">
+                <div class="review-category-pill">Family Consultation</div>
+                <div class="review-stars">★★★★★</div>
+              </div>
+              <h3 class="review-lead">“Our trusted destination for the whole family”</h3>
+              <p class="review-body">
+                From regular checkups and maintenance to specialized skin therapies, this has been our family’s go-to clinic. Punctual appointments, wonderful hospitality, and always dependable advice.
+              </p>
+              <div class="review-footer">
+                <div class="review-avatar">AR</div>
+                <div class="review-author-info">
+                  <div class="review-author-name">Abdul Rasheed V.P.</div>
+                  <div class="review-author-meta">
+                    <span class="verified-check">✓</span> Google Verified · 5.0 ★
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review Card 8 -->
+            <div class="review-card">
+              <div class="review-card-top">
+                <div class="review-category-pill">Comprehensive Clinical Care</div>
+                <div class="review-stars">★★★★★</div>
+              </div>
+              <h3 class="review-lead">“Took time to explain and results are excellent with zero pain”</h3>
+              <p class="review-body">
+                I visited for treatment and I am really impressed. The doctor took time to explain my issue and treatment options thoroughly. The clinic is clean, well-equipped, and the staff is very courteous. Results are excellent!
+              </p>
+              <div class="review-footer">
+                <div class="review-avatar">AP</div>
+                <div class="review-author-info">
+                  <div class="review-author-name">Adithya Pradeep</div>
+                  <div class="review-author-meta">
+                    <span class="verified-check">✓</span> Google Verified · 5.0 ★
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Pagination Indicators -->
+        <div class="reviews-pagination" id="reviewsPagination"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER SECTION (Reference Image 9)
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container-wide">
+      <div class="footer-top-grid">
+        <!-- Left: Newsletter & Care Commitment -->
+        <div class="footer-newsletter-col">
+          <h3 class="footer-news-title">
+            Healthy skin starts<br>with informed care.
+          </h3>
+          <p class="footer-news-desc">
+            Receive skincare insights, treatment updates, and expert guidance delivered thoughtfully to your inbox.
+          </p>
+
+          <form class="newsletter-form" id="newsletterForm" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Naturals Salon journal.');">
+            <div class="newsletter-input-wrap">
+              <input type="email" placeholder="Enter your email..." required class="newsletter-input">
+              <button type="submit" class="newsletter-submit-btn" aria-label="Subscribe">
+                →
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Col 2: EXPLORE -->
+        <div class="footer-nav-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#treatments">Treatments</a></li>
+            <li><a href="#location">Meet the Team</a></li>
+            <li><a href="#journey">Journal</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: TREATMENTS -->
+        <div class="footer-nav-col">
+          <h4>Treatments</h4>
+          <ul>
+            <li><a href="#treatments">Facial Rejuvenation</a></li>
+            <li><a href="#treatments">Hydrafacials</a></li>
+            <li><a href="#treatments">Laser Treatments</a></li>
+            <li><a href="#treatments">Skin Therapy</a></li>
+            <li><a href="#treatments">Melasma Solutions</a></li>
+            <li><a href="#treatments">Keratin & Hair Spa</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: INFORMATION -->
+        <div class="footer-nav-col">
+          <h4>Information</h4>
+          <ul>
+            <li><a href="#location">Contact</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#location">Privacy Policy</a></li>
+            <li><a href="#location">Terms & Conditions</a></li>
+            <li><a href="#location">Patient Information</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Massive Brand Watermark -->
+      <div class="footer-watermark-row">
+        <div class="footer-watermark-text">Naturals Salon</div>
+      </div>
+
+      <!-- Bottom Row -->
+      <div class="footer-bottom-row">
+        <div>© 2025 Naturals Salon. All rights reserved. Kottakkal, Kerala.</div>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <span>|</span>
+          <a href="#">Terms & Conditions</a>
+          <span>|</span>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       CONSULTATION BOOKING MODAL DIALOG
+       ========================================================================== -->
+  <div class="modal-backdrop" id="bookingModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="closeModalBtn">&times;</button>
+      <h3 class="modal-title">Book a Consultation</h3>
+      <p class="modal-subtitle">Naturals Salon • 1st Floor, Al Wahad Complex, Kottakkal</p>
+
+      <form id="consultationForm">
+        <div class="form-group">
+          <label class="form-label" for="clientName">Full Name</label>
+          <input type="text" id="clientName" class="form-input" placeholder="Your name" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="clientPhone">Phone Number (WhatsApp)</label>
+          <input type="tel" id="clientPhone" class="form-input" placeholder="+91 92071 21213" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="treatmentSelect">Desired Treatment</label>
+          <select id="treatmentSelect" class="form-select">
+            <option value="Skin Rejuvenation & Renewal">Skin Rejuvenation & Renewal</option>
+            <option value="Vitamin C Skin Therapy">Vitamin C Skin Therapy</option>
+            <option value="BHA Renewal Peel / Acne Care">BHA Renewal Peel / Acne Care</option>
+            <option value="Skin Lightening & Brightening">Skin Lightening & Brightening</option>
+            <option value="Hydrafacial & Pore Purify">Hydrafacial & Pore Purify</option>
+            <option value="Bridal Makeup & Skincare Package">Bridal Makeup & Skincare Package</option>
+            <option value="Keratin Treatment & Hair Spa">Keratin Treatment & Hair Spa</option>
+            <option value="Hair Straightening / Smoothening">Hair Straightening / Smoothening</option>
+            <option value="Balayage & Hair Coloring">Balayage & Hair Coloring</option>
+            <option value="Luxury Pedicure & Manicure">Luxury Pedicure & Manicure</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="appointmentDate">Preferred Date</label>
+          <input type="date" id="appointmentDate" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="clientNotes">Skin Concerns or Goals (Optional)</label>
+          <textarea id="clientNotes" class="form-textarea" rows="3" placeholder="Tell us about your skin sensitivity, concerns, or previous treatments..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-pill" style="width: 100%; justify-content: center; margin-top: 10px;">
+          <span>Confirm Consultation Request</span>
+          <span class="arrow-circle">→</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
