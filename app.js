@@ -390,42 +390,66 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Philosophy Section Crossfade Transition (Skin <-> Hair) ---
   const philosophyTitleLayers = document.querySelectorAll('.philosophy-title-layer');
   const philosophyMediaLayers = document.querySelectorAll('.philosophy-media-layer');
+  const philosophyCtaLayers = document.querySelectorAll('.philosophy-cta-layer');
 
   if (philosophyTitleLayers.length > 1 && philosophyMediaLayers.length > 1) {
     let currentPhilosophyIndex = 0;
     const totalPhilosophyStates = 2;
-    const displayDuration = 5500; // 5.5s display period per state
-    let philosophyTimer = null;
+    const displayDuration = 3000; // Display each slide for ~3s before transitioning
+    const transitionDuration = 1350; // 1.35s smooth crossfade duration
+    let philosophyTimeout = null;
+
+    // Preload both images in memory so there is no flashing or blank image
+    ['assets/images/philosophy-skin.jpg', 'assets/images/hero-haircare.jpg'].forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
 
     const transitionPhilosophy = (targetIndex) => {
       if (targetIndex === currentPhilosophyIndex) return;
 
-      // Both text and image transition simultaneously
-      philosophyTitleLayers[currentPhilosophyIndex].classList.remove('active');
-      philosophyMediaLayers[currentPhilosophyIndex].classList.remove('active');
+      // Heading, image, and button fade together synchronously
+      if (philosophyTitleLayers[currentPhilosophyIndex]) {
+        philosophyTitleLayers[currentPhilosophyIndex].classList.remove('active');
+      }
+      if (philosophyMediaLayers[currentPhilosophyIndex]) {
+        philosophyMediaLayers[currentPhilosophyIndex].classList.remove('active');
+      }
+      if (philosophyCtaLayers[currentPhilosophyIndex]) {
+        philosophyCtaLayers[currentPhilosophyIndex].classList.remove('active');
+      }
 
       currentPhilosophyIndex = targetIndex;
 
-      philosophyTitleLayers[currentPhilosophyIndex].classList.add('active');
-      philosophyMediaLayers[currentPhilosophyIndex].classList.add('active');
+      if (philosophyTitleLayers[currentPhilosophyIndex]) {
+        philosophyTitleLayers[currentPhilosophyIndex].classList.add('active');
+      }
+      if (philosophyMediaLayers[currentPhilosophyIndex]) {
+        philosophyMediaLayers[currentPhilosophyIndex].classList.add('active');
+      }
+      if (philosophyCtaLayers[currentPhilosophyIndex]) {
+        philosophyCtaLayers[currentPhilosophyIndex].classList.add('active');
+      }
     };
 
-    const startPhilosophyCycle = () => {
-      if (philosophyTimer) clearInterval(philosophyTimer);
-      philosophyTimer = setInterval(() => {
+    const scheduleNextTransition = (delay) => {
+      if (philosophyTimeout) clearTimeout(philosophyTimeout);
+      philosophyTimeout = setTimeout(() => {
         const nextIndex = (currentPhilosophyIndex + 1) % totalPhilosophyStates;
         transitionPhilosophy(nextIndex);
-      }, displayDuration);
+        scheduleNextTransition(displayDuration + transitionDuration);
+      }, delay);
     };
 
-    startPhilosophyCycle();
+    // Initial slide displays for ~3 seconds before transitioning
+    scheduleNextTransition(displayDuration);
 
     // Pause timer when page is hidden to prevent drift
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
-        if (philosophyTimer) clearInterval(philosophyTimer);
+        if (philosophyTimeout) clearTimeout(philosophyTimeout);
       } else {
-        startPhilosophyCycle();
+        scheduleNextTransition(displayDuration);
       }
     });
   }

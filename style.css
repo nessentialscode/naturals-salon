@@ -525,6 +525,28 @@ img {
   margin-top: clamp(14px, 2vw, 20px);
 }
 
+.philosophy-cta-stack {
+  display: grid;
+  grid-template-areas: "ctaStack";
+  align-items: center;
+  justify-items: center;
+}
+
+.philosophy-cta-layer {
+  grid-area: ctaStack;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.35s ease-in-out;
+  will-change: opacity;
+  z-index: 1;
+}
+
+.philosophy-cta-layer.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+
 .philosophy-title {
   font-size: clamp(2.3rem, 4.4vw, 3.8rem);
   font-weight: 600;
@@ -538,7 +560,7 @@ img {
   width: 100%;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 1.3s ease-in-out;
+  transition: opacity 1.35s ease-in-out;
   will-change: opacity;
   z-index: 1;
 }
@@ -568,7 +590,7 @@ img {
   height: 100%;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 1.3s ease-in-out;
+  transition: opacity 1.35s ease-in-out;
   will-change: opacity;
   z-index: 1;
 }
@@ -584,15 +606,10 @@ img {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.8s ease;
 }
 
 .philosophy-img-hair {
   object-position: 50% 25%;
-}
-
-.philosophy-media-box:hover .philosophy-img {
-  transform: scale(1.02);
 }
 
 /* ==========================================================================
@@ -2755,7 +2772,8 @@ img {
 /* Accessibility: Respect Reduced Motion Preference */
 @media (prefers-reduced-motion: reduce) {
   .philosophy-title-layer,
-  .philosophy-media-layer {
+  .philosophy-media-layer,
+  .philosophy-cta-layer {
     transition-duration: 0.01ms !important;
   }
 }
@@ -2847,38 +2865,11 @@ img {
     ) !important;
   }
 
-  /* Content wrapper placed at bottom, aligned to left side, clean and neat */
-  .hero-content-wrapper {
-    flex-grow: 0 !important;
-    margin-top: auto !important;
-    margin-bottom: 32px !important;
-    padding-left: 20px !important;
-    padding-right: 0 !important;
-    width: 100% !important;
-    max-width: calc(100% - 92px) !important;
-    box-sizing: border-box !important;
-    position: relative !important;
-    z-index: 4 !important;
-    display: block !important;
-  }
-
-  /* Hero Title aligned to left side */
-  .hero-main-copy {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    text-align: left !important;
-    max-width: 100% !important;
-  }
-
+  /* Hero text removed in mobile mode as requested ("Beauty begins with the way you care for yourself") */
+  .hero-content-wrapper,
+  .hero-main-copy,
   .hero-title {
-    font-size: clamp(1.82rem, 7.2vw, 2.18rem) !important;
-    line-height: 1.15 !important;
-    letter-spacing: -0.03em !important;
-    text-align: left !important;
-    margin-bottom: 0 !important;
-    color: #ffffff !important;
-    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7) !important;
-    font-weight: 600 !important;
+    display: none !important;
   }
 
   /* Explore Treatments CTA removed in mobile mode as requested */
