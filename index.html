@@ -161,18 +161,18 @@
     </section>
 
     <!-- ==========================================================================
-         PHILOSOPHY SECTION (Reference Image 2) - Two-Slide Skin <-> Hair Crossfade
+         PHILOSOPHY SECTION (Reference Image 2) - Two-State Skin <-> Hair Transition
          ========================================================================== -->
     <section class="philosophy-section" id="about">
       <div class="container">
         <div class="philosophy-heading-box">
           <div class="philosophy-title-stack">
-            <!-- Slide 1: Skin -->
+            <!-- State 1: Skin -->
             <h2 class="philosophy-title philosophy-title-layer philosophy-title-skin active" data-state="skin">
               Beauty begins <span class="title-light">with</span><br>
               <span class="title-light">understanding</span> your skin.
             </h2>
-            <!-- Slide 2: Hair -->
+            <!-- State 2: Hair -->
             <h2 class="philosophy-title philosophy-title-layer philosophy-title-hair" data-state="hair">
               Healthy hair begins <span class="title-light">with</span><br>
               care made <span class="title-light">just for you.</span>
@@ -181,33 +181,21 @@
         </div>
 
         <div class="philosophy-media-box">
-          <!-- Slide 1: Skin Image -->
+          <!-- State 1: Skin Image -->
           <div class="philosophy-media-layer philosophy-media-skin active" data-state="skin">
-            <img src="assets/images/hero-skincare.jpg" alt="Beauty begins with understanding your skin" class="philosophy-img" width="1376" height="768" fetchpriority="high">
+            <img src="assets/images/philosophy-skin.jpg" alt="Radiant dewy face representing skin health" class="philosophy-img">
           </div>
-          <!-- Slide 2: Hair Image -->
+          <!-- State 2: Hair Image -->
           <div class="philosophy-media-layer philosophy-media-hair" data-state="hair">
-            <img src="assets/images/hero-haircare.jpg" alt="Healthy hair care client representing hair health" class="philosophy-img philosophy-img-hair" width="1376" height="768">
+            <img src="assets/images/hero-haircare.jpg" alt="Healthy hair care client representing hair health" class="philosophy-img philosophy-img-hair">
           </div>
         </div>
 
         <div class="philosophy-cta-wrap">
-          <div class="philosophy-cta-stack">
-            <!-- Slide 1: Skin CTA -->
-            <div class="philosophy-cta-layer philosophy-cta-skin active" data-state="skin">
-              <button class="btn-pill" onclick="document.getElementById('location').scrollIntoView({behavior: 'smooth'})" aria-label="About Us">
-                <span>About Us</span>
-                <span class="arrow-circle">→</span>
-              </button>
-            </div>
-            <!-- Slide 2: Hair CTA -->
-            <div class="philosophy-cta-layer philosophy-cta-hair" data-state="hair">
-              <button class="btn-pill" onclick="document.getElementById('location').scrollIntoView({behavior: 'smooth'})" aria-label="About Us">
-                <span>About Us</span>
-                <span class="arrow-circle">→</span>
-              </button>
-            </div>
-          </div>
+          <button class="btn-pill" onclick="document.getElementById('location').scrollIntoView({behavior: 'smooth'})">
+            <span>About Us</span>
+            <span class="arrow-circle">→</span>
+          </button>
         </div>
       </div>
     </section>

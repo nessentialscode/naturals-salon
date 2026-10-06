@@ -387,48 +387,27 @@ document.addEventListener('DOMContentLoaded', () => {
     renderDots();
   }
 
-  // --- Philosophy Section (Second Section) Crossfade Transition (Skin <-> Hair) ---
+  // --- Philosophy Section Crossfade Transition (Skin <-> Hair) ---
   const philosophyTitleLayers = document.querySelectorAll('.philosophy-title-layer');
   const philosophyMediaLayers = document.querySelectorAll('.philosophy-media-layer');
-  const philosophyCtaLayers = document.querySelectorAll('.philosophy-cta-layer');
-
-  // Preload both slide images in memory so transitions are instant with zero flash
-  ['assets/images/hero-skincare.jpg', 'assets/images/hero-haircare.jpg'].forEach((src) => {
-    const img = new Image();
-    img.src = src;
-  });
 
   if (philosophyTitleLayers.length > 1 && philosophyMediaLayers.length > 1) {
     let currentPhilosophyIndex = 0;
     const totalPhilosophyStates = 2;
-    const displayDuration = 3000; // ~3s display duration before crossfading
+    const displayDuration = 5500; // 5.5s display period per state
     let philosophyTimer = null;
 
     const transitionPhilosophy = (targetIndex) => {
       if (targetIndex === currentPhilosophyIndex) return;
 
-      // Heading, image, and button fade together
-      if (philosophyTitleLayers[currentPhilosophyIndex]) {
-        philosophyTitleLayers[currentPhilosophyIndex].classList.remove('active');
-      }
-      if (philosophyMediaLayers[currentPhilosophyIndex]) {
-        philosophyMediaLayers[currentPhilosophyIndex].classList.remove('active');
-      }
-      if (philosophyCtaLayers[currentPhilosophyIndex]) {
-        philosophyCtaLayers[currentPhilosophyIndex].classList.remove('active');
-      }
+      // Both text and image transition simultaneously
+      philosophyTitleLayers[currentPhilosophyIndex].classList.remove('active');
+      philosophyMediaLayers[currentPhilosophyIndex].classList.remove('active');
 
       currentPhilosophyIndex = targetIndex;
 
-      if (philosophyTitleLayers[currentPhilosophyIndex]) {
-        philosophyTitleLayers[currentPhilosophyIndex].classList.add('active');
-      }
-      if (philosophyMediaLayers[currentPhilosophyIndex]) {
-        philosophyMediaLayers[currentPhilosophyIndex].classList.add('active');
-      }
-      if (philosophyCtaLayers[currentPhilosophyIndex]) {
-        philosophyCtaLayers[currentPhilosophyIndex].classList.add('active');
-      }
+      philosophyTitleLayers[currentPhilosophyIndex].classList.add('active');
+      philosophyMediaLayers[currentPhilosophyIndex].classList.add('active');
     };
 
     const startPhilosophyCycle = () => {
@@ -439,7 +418,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }, displayDuration);
     };
 
-    // Initialize slideshow cycle automatically
     startPhilosophyCycle();
 
     // Pause timer when page is hidden to prevent drift
